@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加地址</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../PublicModule/css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav blue">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">添加地址</h1>
+		</header>
+		<div class="mui-content" id="place">
+			<div class="mui-input-row">
+				<label>联系人</label>
+				<input type="text" placeholder="你的名字">
+			</div>
+			<div class="mui-input-row" id="sex">
+				<label></label>
+				<div><input class="radio_type" type="radio" name="type" id="radio1" checked="checked" />
+				男士</div>
+				<div><input class="radio_type" type="radio" name="type" id="radio2" />
+				女士</div>
+			</div>
+			<div class="mui-input-row">
+				<label>电话</label>
+				<input type="text" placeholder="手机号码">
+			</div>
+			<div class="mui-input-row">
+				<label>地址</label>
+				<input type="text" placeholder="小区/写字楼/学校等">
+				<a href=""></a>
+			</div>
+			<div class="mui-input-row">
+				<label>门牌号</label>
+				<input type="text" placeholder="10号楼5层501室222">
+			</div>
+			<div class="mui-input-row">
+				<label>标签</label>
+				<input type="text" placeholder="无/家/学校/公司">
+			</div>
+		</div>
+			<input type="button" id="Place_add" value="确定" />
+	</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../../PublicModule/js/mui.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("body").css("display", "none");
+
+		$("body").fadeIn(500);
+	})
+	mui.init()
+</script>

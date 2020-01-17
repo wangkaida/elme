@@ -15,7 +15,7 @@
 			<h1 class="mui-title">确认订单</h1>
 		</header>
 		<div class="mui-content blue blue2" style="padding-bottom: 40px;">
-			<li class="blue" style="padding: 11px 15px">
+			<li class="blue" style="padding: 11px 15px" id="addPlace">
 				<a class="mui-navigate-right mui-pull-6">
 					<p style="color: #ffffffcc;">订单配送至</p>
 					<h4>新增收货地址</h4>
@@ -38,7 +38,7 @@
 			</div>
 			<div class="mui-card">
 				<div class="mui-card-body" style="padding: 10px 15px;">
-										<li class="mui-table-view-cell mui-media">
+					<li class="mui-table-view-cell mui-media">
 						<strong>仙贝恋花甲粉</strong>
 					</li>
 					<li class="mui-table-view-cell mui-media">
@@ -66,9 +66,9 @@
 					</li>
 				</div>
 			</div>
-					<div class="mui-card">
+			<div class="mui-card">
 				<div class="mui-card-body" style="padding: 10px 15px;">
-				
+
 					<li class="mui-table-view-cell mui-media">
 						<p href="###" class="mui-pull-right">未选择</p>
 						<p class="mui-pull-left" style="color: #000000;font-size: 14px;">套餐分数</p>
@@ -99,4 +99,10 @@
 <script src="../PublicModule/js/mui.min.js"></script>
 <script type="text/javascript">
 	mui.init()
+
+	document.getElementById("addPlace").addEventListener('tap', function() {
+		mui.openWindow({
+			url: "subView/choose_place.html",
+		})
+	})
 </script>
