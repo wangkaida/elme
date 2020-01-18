@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./css/mui.min.css" rel="stylesheet" />
+		<style>
+			#mui-jian{
+				color: #fff;
+			}
+			body{
+				background: #fff;
+			}
+			#mui-bar{
+				background: #3190E8;
+			}
+			#mui-title{
+				color: #fff;
+				font-weight: 700;
+			}
+			#mui-content .huo-title{
+				height: 45px;
+				line-height: 45px;
+				font-size: 17px;
+				padding-left: 10px;
+				background: #fff;
+				margin-top: 10px;
+			}
+			#mui-table:after{
+				background: none;
+			}
+			#mui-table1:before{
+				background: none;
+			}
+			#mui-table .mui-table-view-cell:after{
+				background: none;
+			}
+			#mui-table .mui-table-view-cell{
+				padding: 5px 15px;
+				font-size: 12px;
+				color: #666;
+			}
+			#mui-table1 .mui-table-view-cell:after{
+				background: none;
+			}
+			#mui-table1 .mui-table-view-cell{
+				padding: 5px 15px;
+				font-size: 12px;
+				color: #666;
+			}
+			#mui-table .mui-table-view-cell span{
+				background:#F07373;
+				color: #fff;
+				font-size: 12px;
+				padding: 3px 2px;
+				border-radius: 5px;
+				margin-right: 10px;
+			}
+			#mui-table1 .mui-table-view-cell span{
+				background:#F07373;
+				color: #fff;
+				font-size: 12px;
+				padding: 3px 2px;
+				border-radius: 5px;
+				margin-right: 10px;
+			}
+			#mui-content .anquan{
+				background: #fff;
+				height: 80px;
+				border-top: 1px solid #f1f1f1;
+				position: relative;
+			}
+			#mui-content .anquan img{
+				width: 55px;
+				height: 50px;
+				position: absolute;
+				left: 20px;
+				top: 15px;
+			}
+			#mui-content .anquan span{
+				font-size: 13px;
+				color: #666;
+				position: absolute;
+				left: 100px;
+			}
+			#mui-content .anquan .jieguo{
+				top: 18px;
+			}
+			#mui-content .anquan .data-j{
+				top: 37px;
+			}
+			#mui-table2 .mui-table-view-cell{
+				padding: 10px 15px;
+				font-size: 13px;
+				color: #666;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="mui-bar">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="mui-jian"></a>
+		    <h1 class="mui-title" id="mui-title">商家详情</h1>
+		</header>
+		<div class="mui-content" id="mui-content">
+		    <div class="huo-title">活动与属性</div>
+		    <ul class="mui-table-view" id="mui-table">
+				 
+			</ul>
+		    <ul class="mui-table-view" id="mui-table1">
+				 
+			</ul>
+			<div class="huo-title">食品监督安全公示</div>
+			<div class="anquan">
+				<img src="img/1.png"/>
+				<span class="jieguo">监督检查结果:<i style="font-style: normal; color: red;">良好</i></span>
+				<span class="data-j">检查日期：</span>
+			</div>
+			<div class="huo-title">商家信息</div>
+			<ul class="mui-table-view" id="mui-table2">
+				 
+			</ul>
+		</div>
+		<script src="./js/mui.min.js"></script>
+		<script src="../PublicModule/js/network.js"></script>
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			var data={}
+			getDataByGet("shopping/restaurant/1",data,function(data){	
+				var str=data.supports;
+				console.log(str)
+//				var li=`<li class='mui-table-view-cell'><span class='jian'>${str[0].}`
+				var li=`<li class='mui-table-view-cell'><span style='background:#${str[0].icon_color}'>${str[0].icon_name}</span>${str[0].description}</li>
+				<li class='mui-table-view-cell'><span style='background:#${str[1].icon_color}'>${str[1].icon_name}</span>${str[1].description}</li>
+				<li class='mui-table-view-cell'><span style='background:#${str[2].icon_color}'>${str[2].icon_name}</span>${str[2].description}</li>`
+				$("#mui-table1").append(li);
+				var li1=`<li class='mui-table-view-cell'>${data.name}<li>
+				<li class='mui-table-view-cell'>地址:${data.address}<li>
+				<li class='mui-table-view-cell'>营业时间:${data.opening_hours[0]}<li>
+				<li class='mui-table-view-cell'>营业执照<li>
+				<li class='mui-table-view-cell'>餐饮服务许可证<li>`
+				$("#mui-table2").append(li1);
+			})
+		</script>
+	</body>
+
+</html>
