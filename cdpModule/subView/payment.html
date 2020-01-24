@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>在线支付</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../PublicModule/css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			.choose {
+				color: #666666;
+				padding: 0px 10px;
+				margin: 0;
+				height: 42px;
+				font-size: 18px;
+				line-height: 42px;
+			}
+			
+			.mui-media-body {
+				line-height: 46px;
+			}
+			
+			#radio1,
+			#radio2 {
+				position: absolute;
+				right: 20px;
+				top: 50%;
+				margin-top: -10px;
+			}
+		</style>
+	</head>
+	<script type="text/javascript">
+	</script>
+
+	<body>
+		<header class="mui-bar mui-bar-nav blue">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">在线支付</h1>
+		</header>
+		<div class="mui-content">
+			<div class="data_time">
+				<section>
+					<header class="time_last">支付剩余时间</header>
+					<p class="Time">00 : 15 : 0</p>
+				</section>
+			</div>
+			<p class="choose">选择支付方式</p>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="../images/zfb.png">
+						<div class="mui-media-body">支付宝</div>
+						<input class="radio_type" type="radio" name="type" id="radio1" checked="checked">
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="../images/wx.png">
+						<div class="mui-media-body">微信</div>
+						<input class="radio_type" type="radio" name="type" id="radio2">
+					</a>
+				</li>
+			</ul>
+			<input type="button" id="payment" value="确认支付" />
+		</div>
+		<div id="timer"></div>
+	</body>
+
+</html>
+<script src="../../PublicModule/js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init()
+</script>
+<script type="text/javascript">
+	var time = document.getElementsByClassName("Time")[0]
+	var maxtime = 15 * 60; // 倒计时的总时间
+	function CountDown() {
+		if(maxtime >= 0) {
+			minutes = Math.floor(maxtime / 60);
+			if(minutes < 10) {
+				minutes = "0" + minutes
+			}
+			seconds = Math.floor(maxtime % 60);
+			if(seconds < 10) {
+				seconds = "0" + seconds
+			}
+			msg = "00 : " + minutes + " : " + seconds;
+			time.innerHTML = msg;
+			--maxtime;
+		} else {
+			clearInterval(timer);
+			alert("支付失败！！！");
+		}
+	}
+	timer = setInterval("CountDown()", 1000);
+</script>
