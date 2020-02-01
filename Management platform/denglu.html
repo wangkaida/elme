@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>后台管理系统-登录</title>
+		<link rel="stylesheet" href="css/denglu.css" />
+		<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	</head>
+	<body>
+		<section class="form_contianer" style="">
+			<div class="manage_tip">
+				<h1>elm后台管理系统</h1>
+			</div>
+			<form class="el-form">
+				<div class="el-form-item is-required">
+					<div class="el-form-item__content">
+						<div class="el-input">
+							<input autocomplete="off" placeholder="用户名" type="text" rows="2" validateevent="true" class="el-input__inner" id="username1">
+						</div>
+					</div>
+				</div>
+				<div class="el-form-item is-required">
+					<div class="el-form-item__content">
+						<div class="el-input">
+							<input autocomplete="off" placeholder="密码" type="password" rows="2" validateevent="true" class="el-input__inner" id="password1">
+						</div>
+					</div>
+				</div>
+				<div class="el-form-item">
+					<div class="el-form-item__content"><button id="btn" type="button" class="el-button submit_btn el-button--primary">
+						<span>登陆</span></button>
+					</div>
+				</div>
+			</form>
+			<p class="tip">温馨提示：</p>
+			<p class="tip">未登录过的新用户，自动注册</p>
+			<p class="tip">注册过的用户可凭账号密码登录</p>
+		</section>
+	</body>
+</html>
+<script type="text/javascript">		
+		// function getCookie(key){         //获取cookie值
+		//         var arr=document.cookie.split('; ');
+		//         //console.log(arr);
+		//         for(var i=0;i<arr.length;i++){
+		//             var arr2=arr[i].split('=');
+		//             console.log(arr2);
+		//             if(arr2[0]==key){
+		//                 return arr2[1];
+		//             }
+		//         }
+		//     };
+		document.getElementById("btn").addEventListener('click', function() {
+			var user=$("#username1").val()
+			var psw=$("#password1").val()
+			$.ajax({
+			    type:'post',
+			    url:'https://elm.cangdu.org/admin/login',
+				data:{
+					user_name:user,
+					password:psw
+				},
+			    dataType:'json',
+			    success:function(data){
+					console.log(data)
+			        if(data.success){
+			            location.href='index.html';
+			        }else{
+			            alert("密码错误")
+			        }
+			    }
+			});
+		});
+		
+</script>
