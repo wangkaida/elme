@@ -91,7 +91,7 @@
 		<footer class="shop_price">
 			<a href="###">¥<span class="order_money">23.2</span></a>
 			<p>| 已优惠¥9.8</p>
-			<a href="###" class="Price">去支付</a>
+			<a href="###" class="Price" id="PayMent">去支付</a>
 		</footer>
 	</body>
 
@@ -100,9 +100,16 @@
 <script type="text/javascript">
 	mui.init()
 
+//新增收货地址
 	document.getElementById("addPlace").addEventListener('tap', function() {
 		mui.openWindow({
 			url: "subView/choose_place.html",
+		})
+	})
+	//去支付
+	document.getElementById("PayMent").addEventListener('tap', function() {
+		mui.openWindow({
+			url: "subView/payment.html",
 		})
 	})
 </script>
