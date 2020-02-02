@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>添加地址</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../PublicModule/css/mui.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	</head>
 
@@ -17,7 +17,7 @@
 		<div class="mui-content" id="place">
 			<div class="mui-input-row">
 				<label>联系人</label>
-				<input type="text" placeholder="你的名字">
+				<input type="text" placeholder="你的名字" class="User_Name">
 			</div>
 			<div class="mui-input-row" id="sex">
 				<label></label>
@@ -28,20 +28,20 @@
 			</div>
 			<div class="mui-input-row">
 				<label>电话</label>
-				<input type="text" placeholder="手机号码">
+				<input type="number" placeholder="手机号码" class="User_Phone">
 			</div>
 			<div class="mui-input-row">
 				<label>地址</label>
-				<input type="text" placeholder="小区/写字楼/学校等">
+				<input type="text" placeholder="小区/写字楼/学校等" class="User_Address1">
 				<a href=""></a>
 			</div>
 			<div class="mui-input-row">
 				<label>门牌号</label>
-				<input type="text" placeholder="10号楼5层501室222">
+				<input type="text" placeholder="10号楼5层501室222" class="User_Address2">
 			</div>
 			<div class="mui-input-row">
 				<label>标签</label>
-				<input type="text" placeholder="无/家/学校/公司">
+				<input type="text" placeholder="无/家/学校/公司" class="User_Lable">
 			</div>
 		</div>
 			<input type="button" id="Place_add" value="确定" />
@@ -49,12 +49,33 @@
 
 </html>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="../../PublicModule/js/mui.min.js"></script>
+<script src="../js/mui.min.js"></script>
 <script type="text/javascript">
+	//获取信息
+	var User_Name = document.getElementsByClassName("User_Name")[0]
+	var User_Phone = document.getElementsByClassName("User_Phone")[0]
+	var User_Address1 = document.getElementsByClassName("User_Address1")[0]
+	var User_Address2 = document.getElementsByClassName("User_Address2")[0]
+	var User_Lable = document.getElementsByClassName("User_Lable")[0]
+	
+	//页面打开效果
 	$(document).ready(function() {
 		$("body").css("display", "none");
-
 		$("body").fadeIn(500);
+		User_Name.value = User_Phone.value = User_Address1.value = User_Address2.value =  User_Lable.value = ""
+	})
+	
+	//添加收货地址
+	document.getElementById("Place_add").addEventListener('tap', function() {
+		mui.openWindow({
+			url: "choose_place.html",
+			extras:{
+				UserName:User_Name.value,   //用户名
+				UserPhone:User_Phone.value,			//用户电话
+				UserAddress:User_Address1.value+User_Address2.value,			//用户地址
+				UserLable:User_Lable.value,			//用户标签
+			}
+		})
 	})
 	mui.init()
 </script>

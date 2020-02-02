@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>确认订单</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../PublicModule/css/mui.css" rel="stylesheet" />
+		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 
@@ -91,18 +91,24 @@
 		<footer class="shop_price">
 			<a href="###">¥<span class="order_money">23.2</span></a>
 			<p>| 已优惠¥9.8</p>
-			<a href="###" class="Price">去支付</a>
+			<a href="###" class="Price" id="Price">去支付</a>
 		</footer>
 	</body>
 
 </html>
-<script src="../PublicModule/js/mui.min.js"></script>
+<script src="js/mui.min.js"></script>
 <script type="text/javascript">
 	mui.init()
-
+//添加收货地址
 	document.getElementById("addPlace").addEventListener('tap', function() {
 		mui.openWindow({
 			url: "subView/choose_place.html",
+		})
+	})
+	//跳转支付页面
+		document.getElementById("Price").addEventListener('tap', function() {
+		mui.openWindow({
+			url: "subView/payment.html",
 		})
 	})
 </script>
