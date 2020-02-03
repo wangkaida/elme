@@ -1,3 +1,4 @@
+ul,
 li {
 	list-style: none;
 }
@@ -120,7 +121,8 @@ li {
 	font-size: 14px;
 	height: 58px;
 }
-#place>div>label{
+
+#place>div>label {
 	border: none;
 	font-size: 14px;
 	height: 58px;
@@ -201,7 +203,8 @@ li {
 	display: inline-block;
 }
 
-#Place_add,#payment{
+#Place_add,
+#payment {
 	width: 90%;
 	display: block;
 	margin: 0 auto;
@@ -211,21 +214,151 @@ li {
 	background-color: #4cd964;
 	color: #FFFFFF;
 }
-.data_time{
+
+.data_time {
 	padding: 10px;
 	background: #FFFFFF;
 }
-.data_time .time_last{
+
+.data_time .time_last {
 	margin-top: 20px;
 	color: #666666;
 	font-size: 14px;
 	text-align: center;
 }
-.data_time .Time{
+
+.data_time .Time {
 	font-size: 38px;
 	line-height: 38px;
 	color: #333333;
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+/*订单列表*/
+#order_list {
+	margin: 0;
+	padding: 0;
+}
+
+#order_list>li.order_list {
+	padding: 10px;
+	padding-bottom: 0;
+	margin-bottom: 10px;
+	background: #FFFFFF;
+	height: 10rem;
+}
+
+#order_list .orderInfo_img {
+	width: 3rem;
+	height: 3rem;
+	float: left;
+	margin-right: 10px;
+}
+
+#order_list .order_list2 {
+	float: right;
+	width: 80%;
+	font-size: 14px;
+}
+#order_list .order_list2 .Order_info div{
+	height: 3rem;
+	position: relative;
+}
+#order_list .order_list2 .Order_info .order_info1 p{
+	margin: 0;
+	line-height: 1.5rem;
+}
+#order_list .order_list2 .Order_info .order_info2 p{
+	margin: 0;
+	line-height: 3rem;
+}
+#order_list .order_list2 .Order_info .payment_overtime{
+position: absolute;
+right: 10px;
+top: 1rem;
+color: #000000;
+}
+#order_list .order_list2 .Order_info .order_info2 .order_name{
+	color: #000000;
+}
+#order_list .order_list2 .Order_info .order_info2 a{
+	position: absolute;
+	right: 10px;
+	top: 1rem;
+	font-weight: 700;
+	color: #FF0000;
+}
+#order_list .order_list2 .Order_again{
+	height: 3rem;
+	position: relative;
+}
+#order_list .order_list2 .Order_again span{
+	padding: 1px;
+	font-size: 12px;
+	color: #007AFF;
+	position: absolute;
+	right: 10px;
+	top: 1rem;
+	border: 1px solid #007AFF;
+	border-radius: 5px;
+}
+/*订单详情*/
+#details_info div{
+	margin-bottom: 10px;
+	background: #FFFFFF;
+}
+#details_info .overtime{
+	padding: 1rem;
+	text-align: center;
+}
+#details_info .overtime img{
+	width: 5rem;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+}
+#details_info .overtime strong{
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 20px;
+}
+#details_info .overtime span{
+	font-size: 14px;
+	color: #007AFF;
+	border: 1px solid #007AFF;
+	display: inline-block;
+	margin-top: 10px;
+	padding: 4px;
+	border-radius: 2px;
+}
+#details_info .pay_info ul{
+	padding: 0 15px;
+}
+#details_info .pay_info ul li{
+	height: 3rem;
+}
+#details_info .pay_info ul li:first-of-type{
+	padding: 5px;
+}
+#details_info .pay_info ul li .order_cost{
+	padding-left: 20px;
+}
+#details_info .pay_info ul li .order_Price{
+	color: #fb6b23;
+	font-weight: 700;
+}
+#details_info .pay_info img{
+	width: 2rem;
+	margin-right: 5px;
+}
+#details_info .dispatching ul{
+	margin: 0;
+	padding: 0;
+}
+#details_info .dispatching ul li{
+	padding: 10px;
+	height: 3rem;
 }
