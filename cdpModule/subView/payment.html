@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>在线支付</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../PublicModule/css/mui.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 		<style type="text/css">
 			.choose {
@@ -68,23 +68,17 @@
 	</body>
 
 </html>
-<script src="../../PublicModule/js/mui.min.js"></script>
+<script src="../js/mui.min.js"></script>
 <script type="text/javascript">
 	mui.init()
 </script>
 <script type="text/javascript">
 	var time = document.getElementsByClassName("Time")[0]
-	var maxtime = 15 * 60; // 倒计时的总时间
+	var maxtime = 15 * 60; // 
 	function CountDown() {
 		if(maxtime >= 0) {
 			minutes = Math.floor(maxtime / 60);
-			if(minutes < 10) {
-				minutes = "0" + minutes
-			}
 			seconds = Math.floor(maxtime % 60);
-			if(seconds < 10) {
-				seconds = "0" + seconds
-			}
 			msg = "00 : " + minutes + " : " + seconds;
 			time.innerHTML = msg;
 			--maxtime;

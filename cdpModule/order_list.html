@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../PublicModule/css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav blue">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">订单列表</h1>
+		</header>
+		<div class="mui-content">
+			<ul id="order_list">
+				<li class="order_list">
+					<img class="orderInfo_img" src="https://elm.cangdu.org/img/164ad0b6a3917599.jpg" />
+					<div class="order_list2">
+						<div class="Order_info">
+							<div class="order_info1">
+								<p>效果演示></p>
+								<p>2020-01-17 16:30</p>
+								<a href="###" class="payment_overtime">支付超时</a>
+							</div>
+							<div class="order_info2">
+								<p class="order_name">商品名</p>
+								<a href="###">￥488.00</a>
+							</div>
+						</div>
+						<div class="Order_again">
+							<span>再来一单</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>
+<script src="../PublicModule/js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init()
+		//跳转支付页面
+		document.getElementsByClassName("Order_info")[0].addEventListener('tap', function() {
+		mui.openWindow({
+			url: "subView/order_details.html",
+		})
+	})
+</script>

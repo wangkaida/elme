@@ -5,8 +5,33 @@
 		<meta charset="UTF-8">
 		<title>选择地址</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../PublicModule/css/mui.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			#choose_place {
+				margin-top: 0;
+			}
+			
+			#choose_place li {
+				padding: 11px 15px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.User_Name {
+				font-weight: 700;
+				color: #000000;
+				font-size: 20px;
+			}
+			
+			.User_Lable {
+				padding: 1px 4px;
+				background: #ff5722;
+				color: #FFFFFF;
+				font-size: 12px;
+				border-radius: 10px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -14,6 +39,14 @@
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">选择地址</h1>
 		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" id="choose_place">
+				<!--<li class="mui-table-view-cell">
+					<p><span class="User_Name">名称</span> <span class="User_Sex">先生</span> <span class="User_Phone">17835767451</span></p>
+					<p><span class="User_Lable">标签</span><span class="User_Address">详细地址</span></p>
+				</li>-->
+			</ul>
+		</div>
 		<nav class="mui-bar mui-bar-tab" id="add_place">
 			<a class="mui-tab-item">
 				<span class="mui-icon mui-icon-plus"></span>
@@ -23,15 +56,36 @@
 	</body>
 
 </html>
-<script src="../../PublicModule/js/mui.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
+	var choose_place = document.getElementById("choose_place")
+	var Li = document.createElement("li")
+
+	//接受传值
+	mui.plusReady(function() {
+		Li.innerHTML = ""
+		var self = plus.webview.currentWebview();
+		Li.innerHTML = '<p>' +
+			'<span class="User_Name">' + self.UserName + '</span>' +
+			'<span class="User_Sex">先生</span>' +
+			'<span class="User_Phone">' + self.UserPhone + '</span>' +
+			'</p>' +
+			'<p>' +
+			'<span class="User_Lable">' + self.UserLable + '</span>' +
+			'<span class="User_Address">' + self.UserAddress + '</span>' +
+			'</p>';
+	})
+	choose_place.appendChild(Li)
+
+	//页面加载动画
 	$(document).ready(function() {
 		$("body").css("display", "none");
 		$("body").fadeIn(500);
 	})
 	mui.init()
 
+	//添加收货地址
 	document.getElementById("add_place").addEventListener('tap', function() {
 		mui.openWindow({
 			url: "add_place.html",
