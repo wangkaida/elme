@@ -362,3 +362,18 @@ color: #000000;
 	padding: 10px;
 	height: 3rem;
 }
+/*服务中心*/
+
+			.hot_answer {
+				padding: 11px 15px;
+			}
+			#server_list li a{
+				font-size: 12px;
+				color: #a79b9b;
+			}
+.servers_info{
+	font-size: 22px;
+	padding: 0px 20px;
+	line-height: 30px;
+	background: #FFFFFF;
+}
