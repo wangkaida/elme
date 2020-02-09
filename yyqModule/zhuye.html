@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+		<style>
+			body{
+				background: #0097FE;
+			}
+			.login-pic{
+				width: 90px;
+				height: 90px;
+				margin: 130px auto;
+				position: relative;
+				display: block;
+			}
+			#btn1{
+				width: 70%;
+				height: 50px;
+				margin-left: 15%;
+				font-size: 20px;
+				padding-top: 11px;
+				background: #fff;
+				color:#000;
+				border: 1px solid #999;
+			}
+			#fs{
+				width: 100%;
+				height: 40px;
+				margin-top: 40px;
+				padding: 0 50px;
+			}
+			#fs div{
+				width:30px;
+				height: 30px;
+				margin: 0 15px;
+				display: inline-block;
+			}
+			#fs div span{
+				color: #fff;
+				font-size: 18px;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				padding: 5px 5px;
+				float: left;
+			}
+			#fs div img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img src="img/icon.jpg"/ class="login-pic">
+		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="btn1">手机号登录</button>
+		<div id="fs">
+			<div><span class="mui-icon mui-icon-weixin"></span></div>
+			<div><img src="img/login-3.png"/></div>
+			<div><img src="img/login-4.png"/></div>
+			<div><img src="img/login-1.png"/></div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			$("#btn1").on("tap",function(){
+				location.href="phone.html";
+			})
+		</script>
+	</body>
+
+</html>
