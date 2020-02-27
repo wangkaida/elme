@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>订单列表</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../PublicModule/css/mui.css" rel="stylesheet" />
+		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 
@@ -17,7 +17,7 @@
 		<div class="mui-content">
 			<ul id="order_list">
 				<li class="order_list">
-					<img class="orderInfo_img" src="https://elm.cangdu.org/img/164ad0b6a3917599.jpg" />
+					<img class="orderInfo_img" src="https://cube.elemecdn.com/7/d7/b185cd487a082e9ed35c1aa3014b5jpeg.jpeg?x-oss-process=image/format,webp/resize,w_72,h_72,m_fixed" />
 					<div class="order_list2">
 						<div class="Order_info">
 							<div class="order_info1">
@@ -31,7 +31,7 @@
 							</div>
 						</div>
 						<div class="Order_again">
-							<span>再来一单</span>
+							<a href="order.html">再来一单</a>
 						</div>
 					</div>
 				</li>
@@ -41,13 +41,55 @@
 	</body>
 
 </html>
-<script src="../PublicModule/js/mui.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
-	mui.init()
-		//跳转支付页面
-		document.getElementsByClassName("Order_info")[0].addEventListener('tap', function() {
-		mui.openWindow({
-			url: "subView/order_details.html",
-		})
-	})
+	var order_list = document.getElementById("order_list")
+	//用户id
+	var userId = 47165
+
+	mui.ajax({
+		type: 'GET',
+		url: 'https://elm.cangdu.org/bos/v2/users/' + userId + '/orders?limit=10&offset=0',
+		dataType: 'json',
+		xhrFields: {
+			withCredentials: true
+		},
+		data: {},
+		success: function(data) {
+			console.log(data)
+			var lists = "";
+			for(var i = 0; i < data.length; i++) {
+				//订单id
+				var order_id = data[i].id
+				
+				lists += '<li class="order_list" id="'+data[i].id+'">' +
+					'<img class="orderInfo_img" src="https://elm.cangdu.org/img/' + data[i].restaurant_image_url + '"/>' +
+					'<div class="order_list2">' +
+					'<div class="Order_info">' +
+					'<div class="order_info1">' +
+					'<p>' + data[i].restaurant_name + '</p>' +
+					'<p>' + data[i].formatted_created_at + '</p>' +
+					'<a href="###" class="payment_overtime">' + data[i].status_bar.title + '</a>' +
+					'</div>' +
+					'<div class="order_info2">' +
+					'<p class="order_name"></p>' +
+					'<a href="###">￥' + data[i].basket.packing_fee.price + '</a>' +
+					'</div>' +
+					'</div>' +
+					'<div class="Order_again">' +
+					'<a href="order.html">再来一单</a>' +
+					'</div>' +
+					'</div>' +
+					'</li>';
+				console.log(order_id)
+			}
+			$("#order_list").html(lists);
+		},
+		error: function(error) {
+			console.log(Error)
+		}
+	});
+
+	
 </script>

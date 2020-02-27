@@ -1,6 +1,8 @@
 ul,
 li {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .blue {
@@ -236,7 +238,9 @@ li {
 	margin-bottom: 20px;
 }
 
+
 /*订单列表*/
+
 #order_list {
 	margin: 0;
 	padding: 0;
@@ -262,39 +266,47 @@ li {
 	width: 80%;
 	font-size: 14px;
 }
-#order_list .order_list2 .Order_info div{
+
+#order_list .order_list2 .Order_info div {
 	height: 3rem;
 	position: relative;
 }
-#order_list .order_list2 .Order_info .order_info1 p{
+
+#order_list .order_list2 .Order_info .order_info1 p {
 	margin: 0;
 	line-height: 1.5rem;
 }
-#order_list .order_list2 .Order_info .order_info2 p{
+
+#order_list .order_list2 .Order_info .order_info2 p {
 	margin: 0;
 	line-height: 3rem;
 }
-#order_list .order_list2 .Order_info .payment_overtime{
-position: absolute;
-right: 10px;
-top: 1rem;
-color: #000000;
-}
-#order_list .order_list2 .Order_info .order_info2 .order_name{
+
+#order_list .order_list2 .Order_info .payment_overtime {
+	position: absolute;
+	right: 10px;
+	top: 1rem;
 	color: #000000;
 }
-#order_list .order_list2 .Order_info .order_info2 a{
+
+#order_list .order_list2 .Order_info .order_info2 .order_name {
+	color: #000000;
+}
+
+#order_list .order_list2 .Order_info .order_info2 a {
 	position: absolute;
 	right: 10px;
 	top: 1rem;
 	font-weight: 700;
 	color: #FF0000;
 }
-#order_list .order_list2 .Order_again{
+
+#order_list .order_list2 .Order_again {
 	height: 3rem;
 	position: relative;
 }
-#order_list .order_list2 .Order_again span{
+
+#order_list .order_list2 .Order_again a {
 	padding: 1px;
 	font-size: 12px;
 	color: #007AFF;
@@ -304,28 +316,35 @@ color: #000000;
 	border: 1px solid #007AFF;
 	border-radius: 5px;
 }
+
+
 /*订单详情*/
-#details_info div{
+
+#details_info div {
 	margin-bottom: 10px;
 	background: #FFFFFF;
 }
-#details_info .overtime{
+
+#details_info .overtime {
 	padding: 1rem;
 	text-align: center;
 }
-#details_info .overtime img{
+
+#details_info .overtime img {
 	width: 5rem;
 	border-radius: 50%;
 	display: block;
 	margin: 0 auto;
 }
-#details_info .overtime strong{
+
+#details_info .overtime strong {
 	display: block;
 	text-align: center;
 	margin-top: 10px;
 	font-size: 20px;
 }
-#details_info .overtime span{
+
+#details_info .overtime a {
 	font-size: 14px;
 	color: #007AFF;
 	border: 1px solid #007AFF;
@@ -334,46 +353,172 @@ color: #000000;
 	padding: 4px;
 	border-radius: 2px;
 }
-#details_info .pay_info ul{
+
+#details_info .pay_info ul {
 	padding: 0 15px;
 }
-#details_info .pay_info ul li{
+
+#details_info .pay_info ul li {
 	height: 3rem;
 }
-#details_info .pay_info ul li:first-of-type{
+
+#details_info .pay_info ul li:first-of-type {
 	padding: 5px;
 }
-#details_info .pay_info ul li .order_cost{
+
+#details_info .pay_info ul li .order_cost {
 	padding-left: 20px;
 }
-#details_info .pay_info ul li .order_Price{
+
+#details_info .pay_info ul li .order_Price {
 	color: #fb6b23;
 	font-weight: 700;
 }
-#details_info .pay_info img{
+
+#details_info .pay_info img {
 	width: 2rem;
 	margin-right: 5px;
 }
-#details_info .dispatching ul{
+
+#details_info .dispatching ul {
 	margin: 0;
 	padding: 0;
 }
-#details_info .dispatching ul li{
+
+#details_info .dispatching ul li {
 	padding: 10px;
 	height: 3rem;
 }
+
+
 /*服务中心*/
 
-			.hot_answer {
-				padding: 11px 15px;
-			}
-			#server_list li a{
-				font-size: 12px;
-				color: #a79b9b;
-			}
-.servers_info{
+.hot_answer {
+	padding: 11px 15px;
+}
+
+#server_list li a {
+	font-size: 12px;
+	color: #a79b9b;
+}
+
+.servers_info {
 	font-size: 22px;
 	padding: 0px 20px;
 	line-height: 30px;
 	background: #FFFFFF;
+}
+
+
+/*软件下载*/
+
+#download {
+	text-align: center;
+	height: 100%;
+}
+
+#download img {
+	margin-top: 25px;
+	border-radius: 25px;
+}
+
+#download p {
+	color: #666666;
+	font-size: 18px;
+	margin-bottom: 25px;
+}
+
+#download div.downBtn {
+	background-color: #4cd964;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	margin: 16px;
+	line-height: 40px;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+
+/*购买会员*/
+
+.vip_prerogative {
+	background: #FFFFFF;
+	padding-left: 16px;
+	margin-bottom: 16px;
+}
+.vip_prerogative a{
+	width: 100%;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #F5F5F5;
+}
+.vip_prerogative span.header_left,
+.vip_prerogative span.header_right{
+	font-size: 14px;
+	color: #000000;
+}
+.vip_prerogative span.header_right{
+	float: right;
+	position: relative;
+	right: 10px;
+	color: #999;
+}
+.vip_prerogative .apply_vip_buy{
+	
+}
+.vip_detail{
+	    display: flex;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 16px 0;
+}
+.vip_detail .vip_detail_left{
+	margin-right: 12px;
+}
+.vip_detail .vip_detail_left img{
+	width: 32px;
+	height: 36px;
+}
+.vip_detail .vip_detail_right h4{
+	font-size: 14px;
+}
+.vip_detail .vip_detail_right p{
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+
+/*会员说明*/
+
+.explain {
+	margin: 12px 40px;
+}
+
+.explain p {
+	line-height: 14px;
+	font-size: 12px;
+	margin-bottom: 0;
+	color: #000000;
+}
+
+.servers_info h3 {
+	margin-top: 15px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+}
+
+.servers_info ul li ,.servers_info ol li{
+	margin-bottom: 5px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #666666;
+}
+/*账户信息*/
+#portrait{
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
 }

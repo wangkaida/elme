@@ -5,9 +5,10 @@
 		<meta charset="UTF-8">
 		<title>用户个人信息</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../PublicModule/css/mui.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="fonts2/iconfont.css" />
 		<link rel="stylesheet" type="text/css" href="css/user_info.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 
 	<body>
@@ -18,10 +19,12 @@
 		<div class="mui-content">
 			<ul class="mui-table-view blue" style="margin-top: 0;">
 				<li class="user_info">
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right" href="subView/account_information.html" style="display: block;">
 						<img class="mui-pull-left user_img" src="https://elm.cangdu.org/img/default.jpg">
 						<div class="mui-media-body" style="line-height: 32px;">
-							登录/注册
+							<span id="userLogin">
+								登录/注册
+							</span>
 							<p class="mui-ellipsis">暂无绑定手机号</p>
 						</div>
 					</a>
@@ -30,7 +33,7 @@
 			<div id="info_data" class="mui-row">
 				<div class="mui-col-sm-4 mui-col-xs-4">
 					<li>
-						<span class="info_data_top">
+						<span class="info_data_top"> 
 							<span class="info_data_top_num1">0.00</span> 元
 						</span>
 						<span class="user_info_title">我的余额</span>
@@ -58,7 +61,7 @@
 					<a href="###" class="mui-pull-left">
 						<span class="mui-icon iconfont icon-wodedingdan"></span>
 					</a>
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right" href="order_list.html">
 						我的订单
 					</a>
 				</li>
@@ -75,7 +78,7 @@
 					<a href="###" class="mui-pull-left">
 						<span class="mui-icon iconfont icon-huiyuan" style="color: #FFC636;"></span>
 					</a>
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right" href="subView/user_vip.html">
 						饿了么会员卡
 					</a>
 				</li>
@@ -96,7 +99,7 @@
 						<span class="mui-icon iconfont icon-elem
 " style="color: #FC7B53;"></span>
 					</a>
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right" href="subView/download.html">
 						下载饿了么APP
 					</a>
 				</li>
@@ -111,11 +114,11 @@
 				<span class="mui-icon iconfont icon-zhinanzhen"></span>
 				<span class="mui-tab-label">搜索</span>
 			</a>
-			<a class="mui-tab-item">
+			<a class="mui-tab-item" href="order.html">
 				<span class="mui-icon iconfont icon-icon-"></span>
 				<span class="mui-tab-label">订单</span>
 			</a>
-			<a class="mui-tab-item">
+			<a class="mui-tab-item" href="user_info.html">
 				<span class="mui-icon iconfont icon-wode"></span>
 				<span class="mui-tab-label">我的</span>
 			</a>
@@ -123,7 +126,16 @@
 	</body>
 
 </html>
-<script src="../PublicModule/js/mui.min.js"></script>
+<script src="js/mui.min.js"></script>
 <script type="text/javascript">
 	mui.init()
+	
+		document.getElementById("userLogin").addEventListener('tap', function() {
+		mui.openWindow({
+			url: "../subView/account_infomation.html",
+			extras:{
+				UserName:User_Name.value,   //用户名
+			}
+		})
+	})
 </script>

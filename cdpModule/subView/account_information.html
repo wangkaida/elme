@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>账户信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			p{display: inline-block;}
+			#quit{
+				width: 98%;
+				display: block;
+				margin: 0 auto;
+				margin-top: 30px;
+				height: 30px;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav blue">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">账户信息</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;" id="Album">
+						<img id="portrait" class="mui-pull-right" src="../images/user.jpg">
+						<div class="mui-media-body">
+							头像
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;" class="mui-navigate-right">
+						<div class="mui-media-body">
+							用户名
+							<span id="userName">
+								
+							</span>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;" class="mui-navigate-right">
+						<div class="mui-media-body">
+							收货地址
+						</div>
+					</a>
+				</li>
+			</ul>
+				<p>账号绑定</p>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<img src="../images/phone.png"/><p>手机</p>
+					</a>
+				</li>
+			</ul>
+				<p>安全设置</p>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" class="mui-navigate-right">
+						<p>登录密码</p>
+						<p class="mui-pull-right" style="padding-right: 20px;">修改</p>
+					</a>
+				</li>
+			</ul>
+			<button type="button" id="quit" class="mui-btn mui-btn-danger">退出登录</button>
+		</div>
+	</body>
+
+</html>
+<script src="../js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init()
+	//调用本地相册
+	mui.plusReady(function() {
+		var Album = document.getElementById("Album")
+		Album.addEventListener("tap", function() {
+			plus.gallery.pick(
+				function(path) {
+					//console.log(path.files)
+					portrait.src = path;
+				}
+			)
+		})
+	})
+	
+	//用户名
+	var userName = document.getElementById("userName")
+	mui.plusReady(function() {
+		name.innerHTML = ""
+		var self = plus.webview.currentWebview();
+		name.innerHTML = self.UserName
+	})
+	userName.innerHTML = name
+</script>
